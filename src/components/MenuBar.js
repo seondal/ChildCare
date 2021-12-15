@@ -118,7 +118,7 @@ function MenuBar({ change }) {
                 fontWeight: '600',
                 fontFamily: 'payboocExtraBold',
               }}
-              name={change == '프로그램 소개' ? '홈' : 'Program'}
+              name={change == 'kor' ? '프로그램 소개' : 'Program'}
               onClick={() => history.push(`/program/kor`)}
             />
             <Menu.Item
@@ -127,7 +127,7 @@ function MenuBar({ change }) {
                 fontWeight: '600',
                 fontFamily: 'payboocExtraBold',
               }}
-              name={change == '연구소 소식' ? '홈' : 'News'}
+              name={change == 'kor' ? '연구소 소식' : 'News'}
               onClick={() => history.push(`/board/kor`)}
             />
           </>
