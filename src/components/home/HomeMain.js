@@ -89,7 +89,10 @@ const DetailWrapper = styled.div`
   }
   @media (max-width: 430px) {
     width: 100%;
-    padding: 30px;
+    padding: 20px;
+    font-size: 10px;
+    height: auto;
+    background-color: rgba(237, 237, 237, 0.5);
   }
 `
 
@@ -106,17 +109,17 @@ const WelcomeWrapper = styled.div`
 
   @media (max-width: 430px) {
     display: flex;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width:90%;
     padding: 30px;
     padding-top: 50px;
-    height: auto;
+    height: 350px;
     flex-direction: column;
 
     .contents {
       line-height: 25px;
-      font-size: 13px;
+      font-size: 11px;
     }
   }
 `
@@ -186,8 +189,8 @@ const CategoryWrapper = styled.div`
     height: auto;
     width: 80%;
     padding: 50px 0px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 
     .contents {
       line-height: 25px;
@@ -281,7 +284,7 @@ function HomeMain({ match }) {
               <br /> <br />
               <br />
               {lang == 'kor'
-                ? ' 아이세이 언어연구소는 언어를 한참 배우고 언어 활동을 좋아하는 아동 또는 언어발달이 조금 느린 아동, 두 언어를 사용하는 이중언어 아동 모두를 환영합니다. \n\n\n 아이세이 언어연구소는 모든 아동들이 즐겁게 언어를 사용하는 방법을 배우고, 타인과의 의사소통에서 자신의 잠재력을 온전히 발휘할 수 있도록 돕는 역할을 하고자 합니다. \n\n\n 다년 간의 연구를 통해 축적한 이론적 배경과 특허 기반 프로그램은 아이세이 언어연구소에서만 제공할 수 있는 특화된 기술로, 아동의 언어 능력의 정확한 평가와 효과적인 언어 지원 서비스를 제공합니다.'
+                ? ' 아이세이 언어연구소는 언어를 한참 배우고 언어 활동을 좋아하는 아동 또는 언어발달이 조금 느린 아동, 두 언어를 사용하는 이중언어 아동 모두를 환영합니다.  아이세이 언어연구소는 모든 아동들이 즐겁게 언어를 사용하는 방법을 배우고, 타인과의 의사소통에서 자신의 잠재력을 온전히 발휘할 수 있도록 돕는 역할을 하고자 합니다. 다년 간의 연구를 통해 축적한 이론적 배경과 특허 기반 프로그램은 아이세이 언어연구소에서만 제공할 수 있는 특화된 기술로, 아동의 언어 능력의 정확한 평가와 효과적인 언어 지원 서비스를 제공합니다.'
                 : 'I Say Lab welcomes all children who are actively learning language and interested in language activities, including children who are slow in language development, and bilingual children who speak two languages. I Say Lab aims to help all children learn how to use language in a fun way and to reach their full potential in communicating with others. I Say Lab provides specialized technologies and patent-based programs developed through many years of research and in alignment with theoretical backgrounds, offering an accurate evaluation of children’s language skills and effective language support services.'}
             </DetailWrapper>
           </Fade>
@@ -292,7 +295,7 @@ function HomeMain({ match }) {
           <WelcomeText>
             {' '}
             <Fade bottom cascade>
-              <Typography>
+              <Typography >
                 <Title
                   level={isMobile ? 4 : 3}
                   style={
