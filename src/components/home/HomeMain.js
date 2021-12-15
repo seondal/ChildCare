@@ -49,7 +49,6 @@ const ImageWrapper = styled.image`
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: 0px 100%;
-
     .title {
       width: 22rem;
       margin-top: 30px;
@@ -107,13 +106,17 @@ const WelcomeWrapper = styled.div`
 
   @media (max-width: 430px) {
     display: flex;
+    margin-top: 0px;
+    margin-bottom: 0px;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
+    padding-top: 50px;
     height: auto;
     flex-direction: column;
 
     .contents {
       line-height: 25px;
+      font-size: 13px;
     }
   }
 `
@@ -141,8 +144,12 @@ const WelcomeImage2 = styled.image`
   height: 200px;
   border-radius: 10px;
 
+  @media (max-width: 1024px) {
+    display: none;
+  }
   @media (max-width: 430px) {
-    width: 100%;
+    display: block;
+    margin-bottom: 50px;
   }
 `
 
@@ -160,6 +167,7 @@ const WelcomeText = styled.div`
   }
   @media (max-width: 430px) {
     padding: 0;
+    margin: 0px;
   }
 `
 
@@ -178,10 +186,13 @@ const CategoryWrapper = styled.div`
     height: auto;
     width: 80%;
     padding: 50px 0px;
-    margin-bottom: 0px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 
     .contents {
-      text-align: justify;
+      line-height: 25px;
+      font-size: 13px;
+      text-align: center;
     }
   }
 `
@@ -249,7 +260,7 @@ function HomeMain({ match }) {
     <div>
       <Wrapper>
         <MenuBar change={lang} />
-        {/* <ImageWrapper src={BackgroundImage}>
+        <ImageWrapper src={BackgroundImage}>
           <Fade bottom cascade>
             <TextWrapper className="title" size="27" margin="10%">
               {' '}
@@ -274,11 +285,10 @@ function HomeMain({ match }) {
                 : 'I Say Lab welcomes all children who are actively learning language and interested in language activities, including children who are slow in language development, and bilingual children who speak two languages. I Say Lab aims to help all children learn how to use language in a fun way and to reach their full potential in communicating with others. I Say Lab provides specialized technologies and patent-based programs developed through many years of research and in alignment with theoretical backgrounds, offering an accurate evaluation of children’s language skills and effective language support services.'}
             </DetailWrapper>
           </Fade>
-        </ImageWrapper>  */}
+        </ImageWrapper>
 
-        {/* <WelcomeWrapper>
+        <WelcomeWrapper>
           <WelcomeImage src={Welcome} />
-
           <WelcomeText>
             {' '}
             <Fade bottom cascade>
@@ -339,9 +349,9 @@ function HomeMain({ match }) {
               </Typography>
             </Fade>
           </WelcomeText>
-        </WelcomeWrapper> */}
+        </WelcomeWrapper>
 
-        {/* <CategoryWrapper>
+        <CategoryWrapper>
           <Fade bottom cascade>
             <Typography>
               <Title
@@ -438,9 +448,9 @@ function HomeMain({ match }) {
               </Banner>
             </Fade>
           </BannerWrapper>
-        </CategoryWrapper> */}
+        </CategoryWrapper>
 
-        {/* <WelcomeWrapper>
+        <WelcomeWrapper>
           {isMobile ? (
             <></>
           ) : (
@@ -468,6 +478,7 @@ function HomeMain({ match }) {
                 </Title>
                 <Paragraph>
                   <Title
+                    className="contents"
                     level={5}
                     style={{
                       marginBottom: '20px',
@@ -479,6 +490,7 @@ function HomeMain({ match }) {
                       : ' We study how children learn language and also how language learning can break down.'}
                   </Title>
                   <Title
+                    className="contents"
                     level={5}
                     style={{
                       marginBottom: '20px',
@@ -513,7 +525,7 @@ function HomeMain({ match }) {
           ) : (
             <></>
           )}
-          </WelcomeWrapper> */}
+        </WelcomeWrapper>
       </Wrapper>
     </div>
   )
