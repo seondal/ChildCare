@@ -83,42 +83,48 @@ function MenuBar({ change }) {
         </a>
 
         <Menu.Menu position="right" style={{ marginRight: '30px' }}>
-          <Menu.Item
-            style={{
-              color: 'white',
-              fontWeight: '600',
-              fontFamily: 'payboocExtraBold',
-            }}
-            name="홈"
-            onClick={() => history.push(`/main/kor`)}
-          />
-          <Menu.Item
-            style={{
-              color: 'white',
-              fontWeight: '600',
-              fontFamily: 'payboocExtraBold',
-            }}
-            name="연구소소개"
-            onClick={() => history.push(`/lab/kor`)}
-          />
-          <Menu.Item
-            style={{
-              color: 'white',
-              fontWeight: '600',
-              fontFamily: 'payboocExtraBold',
-            }}
-            name="프로그램소개"
-            onClick={() => history.push(`/program/kor`)}
-          />
-          <Menu.Item
-            style={{
-              color: 'white',
-              fontWeight: '600',
-              fontFamily: 'payboocExtraBold',
-            }}
-            name="연구소 소식"
-            onClick={() => history.push(`/board/kor`)}
-          />
+          {isMobile ? (
+            <></>
+          ) : (
+            <>
+              <Menu.Item
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'payboocExtraBold',
+                }}
+                name="홈"
+                onClick={() => history.push(`/main/kor`)}
+              />
+              <Menu.Item
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'payboocExtraBold',
+                }}
+                name="연구소소개"
+                onClick={() => history.push(`/lab/kor`)}
+              />
+              <Menu.Item
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'payboocExtraBold',
+                }}
+                name="프로그램소개"
+                onClick={() => history.push(`/program/kor`)}
+              />
+              <Menu.Item
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'payboocExtraBold',
+                }}
+                name="연구소 소식"
+                onClick={() => history.push(`/board/kor`)}
+              />
+            </>
+          )}
           <Menu.Item
             style={{
               color: 'white',
@@ -161,42 +167,48 @@ function MenuBar({ change }) {
         </a>
 
         <Menu.Menu position="right" style={{ marginRight: '30px' }}>
-          <Menu.Item
-            style={{
-              color: 'white',
-              fontWeight: '600',
-              fontFamily: 'payboocExtraBold',
-            }}
-            name="Home"
-            onClick={() => history.push(`/main/eng`)}
-          />
-          <Menu.Item
-            style={{
-              color: 'white',
-              fontWeight: '600',
-              fontFamily: 'payboocExtraBold',
-            }}
-            name="Lab"
-            onClick={() => history.push(`/lab/eng`)}
-          />
-          <Menu.Item
-            style={{
-              color: 'white',
-              fontWeight: '600',
-              fontFamily: 'payboocExtraBold',
-            }}
-            name="Program"
-            onClick={() => history.push(`/program/eng`)}
-          />
-          <Menu.Item
-            style={{
-              color: 'white',
-              fontWeight: '600',
-              fontFamily: 'payboocExtraBold',
-            }}
-            name="News"
-            onClick={() => history.push(`/board/eng`)}
-          />
+          {isMobile ? (
+            <></>
+          ) : (
+            <>
+              <Menu.Item
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'payboocExtraBold',
+                }}
+                name="Home"
+                onClick={() => history.push(`/main/eng`)}
+              />
+              <Menu.Item
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'payboocExtraBold',
+                }}
+                name="Lab"
+                onClick={() => history.push(`/lab/eng`)}
+              />
+              <Menu.Item
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'payboocExtraBold',
+                }}
+                name="Program"
+                onClick={() => history.push(`/program/eng`)}
+              />
+              <Menu.Item
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'payboocExtraBold',
+                }}
+                name="News"
+                onClick={() => history.push(`/board/eng`)}
+              />
+            </>
+          )}
           <Menu.Item
             style={{
               color: 'white',
