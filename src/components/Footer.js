@@ -50,13 +50,16 @@ const Footer = () => {
         style={
           isMobile
             ? {
+                backgroundColor: '#F9BE00',
                 display: 'flex',
                 fontWeight: 'bold',
                 fontSize: '10px',
                 alignItems: 'center',
                 flexDirection: 'column',
+                paddingBottom: '20px',
               }
             : {
+                backgroundColor: '#F9BE00',
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'flex-end',
