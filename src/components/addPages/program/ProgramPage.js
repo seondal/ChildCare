@@ -38,8 +38,8 @@ const ImageWrapper = styled.image`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: #E7E6E1;
-  background-position:center ;
+  background-color: #e7e6e1;
+  background-position: center;
 `
 
 const RowWrapper = styled.div`
@@ -73,7 +73,7 @@ const TextWrapper = styled.div`
   margin-right: 30px;
   margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.5);
-  padding:5px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -105,169 +105,143 @@ function ProgramPage({ match }) {
         <MenuBar change={lang} />
         <RowWrapper>
           <ImageWrapper src={BackgroundImage}>
-            
-          <ColumnWrapper>
-            <TextColumnWrapper>
-              <TextWrapper size="19">
-                {lang == 'kor' ? ' 프로그램 소개 ' : 'Program :'}
-       
-  <br /> <br />
+            <ColumnWrapper>
+              <TextColumnWrapper>
+                <TextWrapper size="19">
+                  {lang == 'kor' ? ' 프로그램 소개 ' : 'Program :'}
+                  <br /> <br />
+                  {lang == 'kor'
+                    ? ' ISayLab의 프로그램을 소개합니다.'
+                    : 'Look around the program.'}{' '}
+                </TextWrapper>
+              </TextColumnWrapper>
+              <Button
+                block
+                onClick={() => {
+                  setNumState(1)
+                }}
+                style={{
+                  color: 'black',
+                  height: '45px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '13px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
                 {lang == 'kor'
-                  ? ' ISayLab의 프로그램을 소개합니다.'
-                  : 'Look around the program.'}{' '}
-              </TextWrapper>
-            </TextColumnWrapper>
-            <Button
-              block
-              onClick={() => {
-                setNumState(1)
-              }}
-              style={{
-                color: 'black',
-                height: '45px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '13px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor'
-                ? '언어발달 평가 및 언어지원'
-                : 'Language development evaluation'}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(2)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '45px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '13px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor'
-                ? '언어발달 전문가와 함께 하는 책읽기'
-                : 'Book reading with experts'}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(3)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '45px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '13px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor'
-                ? '자녀의 언어발달을 촉진하기 위한 부모 코칭'
-                : 'Parent coaching '}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(4)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '50px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '13px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor'
-                ? '언어발달 관련 영역 전문가 교육'
-                : 'Language area expert training'}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(5)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '45px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '13px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor'
-                ? '주말프로그램: 책과 함께하는 휴식 시간'
-                : 'Weekend: Break Time with Books'}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(6)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '45px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '13px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor'
-                ? ' 특별프로그램: 여름/겨울방학 책읽기 캠프'
-                : 'Special: Vacation Reading Camp'}
-            </Button>
-          </ColumnWrapper>
+                  ? '언어발달 평가 및 언어지원'
+                  : 'Language development evaluation'}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(2)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '45px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '13px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor'
+                  ? '언어발달 전문가와 함께 하는 책읽기'
+                  : 'Book reading with experts'}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(3)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '45px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '13px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor'
+                  ? '자녀의 언어발달을 촉진하기 위한 부모 코칭'
+                  : 'Parent coaching '}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(4)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '50px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '13px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor'
+                  ? '언어발달 관련 영역 전문가 교육'
+                  : 'Language area expert training'}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(5)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '45px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '13px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor'
+                  ? '주말프로그램: 책과 함께하는 휴식 시간'
+                  : 'Weekend: Break Time with Books'}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(6)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '45px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '13px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor'
+                  ? ' 특별프로그램: 여름/겨울방학 책읽기 캠프'
+                  : 'Special: Vacation Reading Camp'}
+              </Button>
+            </ColumnWrapper>
           </ImageWrapper>
-
-         
         </RowWrapper>
         <ContentsWrapper>
           <DetailPage num={numState} lang={lang} />
         </ContentsWrapper>
       </Wrapper>
-      <div className={classes.footer}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            paddingTop: '3vh',
-            marginBottom: '3vh',
-          }}>
-          <img src="/002.png" width="60px" height="60px" />
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'flex-end',
-            fontWeight: 'bold',
-            fontSize: '16px',
-            marginTop: '1.2vh',
-            justifyContent: 'center',
-          }}>
-          <div>대표이메일 isaylab2020@gmail.com</div>
-          <div style={{ margin: '0px 1vw' }}>|</div>
-          <div>
-            주소: 서울특별시 강남구 압구정로 29길 68, 금강아케이드상가 2층{' '}
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

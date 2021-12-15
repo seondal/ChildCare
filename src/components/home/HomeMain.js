@@ -515,47 +515,6 @@ function HomeMain({ match }) {
           )}
           </WelcomeWrapper> */}
       </Wrapper>
-
-      <div className={classes.footer}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            paddingTop: '3vh',
-            marginBottom: '3vh',
-          }}
-        >
-          <img src="/002.png" width="60px" height="60px" />
-        </div>
-        <div
-          style={
-            isMobile
-              ? {
-                  display: 'flex',
-                  fontWeight: 'bold',
-                  fontSize: '10px',
-                  alignItems: 'center',
-                  flexDirection: 'column',
-                }
-              : {
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'flex-end',
-                  fontWeight: 'bold',
-                  fontSize: '16px',
-                  marginTop: '1.2vh',
-                  justifyContent: 'center',
-                }
-          }
-        >
-          <div>대표이메일 : isaylab2020@gmail.com</div>
-          {isMobile ? <></> : <div style={{ margin: '0px 1vw' }}>|</div>}
-          <div>
-            주소: 서울특별시 강남구 압구정로 29길 68, 금강아케이드상가 2층
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

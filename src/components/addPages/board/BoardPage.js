@@ -37,8 +37,6 @@ const Wrapper = styled.div`
   width: 100%;
 `
 
-
-
 const RowWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -150,7 +148,7 @@ function BoardPage({ match }) {
       <Wrapper>
         <MenuBar change={lang} />
         <RowWrapper>
-        <ImageWrapper src={BackgroundImage}>
+          <ImageWrapper src={BackgroundImage}>
             <TextColumnWrapper>
               <TextWrapper size="25">
                 {' '}
@@ -182,71 +180,49 @@ function BoardPage({ match }) {
             visible={isModalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
-            width={1000}>
+            width={1000}
+          >
             <Title
               level={4}
               style={{
                 fontFamily: 'payboocExtraBold',
                 marginTop: '2%',
                 marginBottom: '2%',
-              }}>
+              }}
+            >
               {newsState.member.title}
             </Title>
             <Paragraph
               style={{
                 fontFamily: 'payboocMedium',
-              }}>
+              }}
+            >
               {newsState.member.contents}
             </Paragraph>
             <Paragraph
               style={{
                 fontFamily: 'payboocMedium',
-              }}>
+              }}
+            >
               {newsState.member.contentsEng}
             </Paragraph>
             <Paragraph
               style={{
                 fontFamily: 'payboocBold',
-              }}>
+              }}
+            >
               {newsState.member.theme}
             </Paragraph>
             <Paragraph
               style={{
                 fontFamily: 'payboocBold',
-              }}>
+              }}
+            >
               {newsState.member.date}
             </Paragraph>
           </Modal>
         </ContentsWrapper>
       </Wrapper>
-      <div className={classes.footer}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            paddingTop: '3vh',
-            marginBottom: '3vh',
-          }}>
-          <img src="/002.png" width="60px" height="60px" />
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'flex-end',
-            fontWeight: 'bold',
-            fontSize: '16px',
-            marginTop: '1.2vh',
-            justifyContent: 'center',
-          }}>
-          <div>대표이메일 isaylab2020@gmail.com</div>
-          <div style={{ margin: '0px 1vw' }}>|</div>
-          <div>
-            주소: 서울특별시 강남구 압구정로 29길 68, 금강아케이드상가 2층{' '}
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

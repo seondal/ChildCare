@@ -54,7 +54,7 @@ const ColumnWrapper = styled.div`
   height: 100%;
 `
 const TextColumnWrapper = styled.div`
-   display: flex;
+  display: flex;
   flex-direction: column;
   margin-bottom: 60px;
   background-color: rgba(0, 0, 0, 0);
@@ -69,7 +69,7 @@ const TextWrapper = styled.div`
   margin-top: 10px;
   margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.5);
-  padding:5px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -93,143 +93,110 @@ function LabPage({ match }) {
         <RowWrapper>
           <ImageWrapper src={BackgroundImage}>
             <ColumnWrapper>
-            <TextColumnWrapper style={{ fontFamily: 'payboocExtraBold' }}>
-              <TextWrapper size="19">
-                {' '}
-                {lang == 'kor' ? '연구소 소개 ' : 'About Lab  '} 
-            
-                {' '}<br />
-                <br />
-                {lang == 'kor'
-                  ? ' ISayLab을 '
-                  : 'Welcome To '}
-             
-                  {lang == 'kor'
-                  ? '소개합니다.'
-                  : 'ISayLab'}
-              </TextWrapper>
-            </TextColumnWrapper>
-            <Button
-              block
-              onClick={() => {
-                setNumState(1)
-              }}
-              style={{
-                color: 'black',
-                height: '50px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '15px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor' ? '연구소 소개' : 'Lab'}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(2)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '50px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '15px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor' ? '연구원 소개' : 'Researchers'}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(3)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '50px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '15px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor' ? '연구소 전경' : 'Photo'}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(4)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '50px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '15px',
-                backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor' ? '이용안내' : 'Service'}
-            </Button>
-            <Button
-              onClick={() => {
-                setNumState(5)
-              }}
-              block
-              style={{
-                color: 'black',
-                height: '50px',
-                borderRadius: '10px',
-                fontFamily: 'payboocExtraBold',
-                fontSize: '15px',
-               backgroundColor: 'rgba(249, 189, 0, 0.8)',
-                borderColor: 'rgba(241, 245, 249, 1)',
-                marginBottom: '1px',
-              }}>
-              {lang == 'kor' ? '오시는 길' : 'Directions'}
-            </Button>
-          </ColumnWrapper>
-         
+              <TextColumnWrapper style={{ fontFamily: 'payboocExtraBold' }}>
+                <TextWrapper size="19">
+                  {' '}
+                  {lang == 'kor' ? '연구소 소개 ' : 'About Lab  '} <br />
+                  <br />
+                  {lang == 'kor' ? ' ISayLab을 ' : 'Welcome To '}
+                  {lang == 'kor' ? '소개합니다.' : 'ISayLab'}
+                </TextWrapper>
+              </TextColumnWrapper>
+              <Button
+                block
+                onClick={() => {
+                  setNumState(1)
+                }}
+                style={{
+                  color: 'black',
+                  height: '50px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '15px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor' ? '연구소 소개' : 'Lab'}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(2)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '50px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '15px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor' ? '연구원 소개' : 'Researchers'}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(3)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '50px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '15px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor' ? '연구소 전경' : 'Photo'}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(4)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '50px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '15px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor' ? '이용안내' : 'Service'}
+              </Button>
+              <Button
+                onClick={() => {
+                  setNumState(5)
+                }}
+                block
+                style={{
+                  color: 'black',
+                  height: '50px',
+                  borderRadius: '10px',
+                  fontFamily: 'payboocExtraBold',
+                  fontSize: '15px',
+                  backgroundColor: 'rgba(249, 189, 0, 0.8)',
+                  borderColor: 'rgba(241, 245, 249, 1)',
+                  marginBottom: '1px',
+                }}
+              >
+                {lang == 'kor' ? '오시는 길' : 'Directions'}
+              </Button>
+            </ColumnWrapper>
           </ImageWrapper>
-         
         </RowWrapper>
         <DetailPage num={numState} lang={lang} />
       </Wrapper>
-
-      <div className={classes.footer}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            paddingTop: '3vh',
-            marginBottom: '3vh',
-          }}>
-          <img src="/002.png" width="60px" height="60px" />
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'flex-end',
-            fontWeight: 'bold',
-            fontSize: '16px',
-            marginTop: '1.2vh',
-            justifyContent: 'center',
-          }}>
-          <div>대표이메일 isaylab2020@gmail.com</div>
-          <div style={{ margin: '0px 1vw' }}>|</div>
-          <div>
-            주소: 서울특별시 강남구 압구정로 29길 68, 금강아케이드상가 2층{' '}
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
