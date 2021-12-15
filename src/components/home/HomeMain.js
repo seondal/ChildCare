@@ -104,6 +104,11 @@ const WelcomeWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 10%;
+
+  @media (max-width: 430px) {
+    width: 100%;
+    padding: 30px;
+  }
 `
 
 const WelcomeImage = styled.image`
@@ -114,6 +119,7 @@ const WelcomeImage = styled.image`
   width: 50%;
   height: 400px;
   border-radius: 10px;
+
   @media (max-width: 1024px) {
     display: none;
   }
@@ -142,6 +148,8 @@ const WelcomeText = styled.div`
   background-color: rgba(237, 237, 237, 0);
   @media (max-width: 1024px) {
     width: 100%;
+  }
+  @media (max-width: 430px) {
   }
 `
 
@@ -194,7 +202,7 @@ function HomeMain({ match }) {
     <div>
       <Wrapper>
         <MenuBar change={lang} />
-        <ImageWrapper src={BackgroundImage}>
+        {/* <ImageWrapper src={BackgroundImage}>
           <Fade bottom cascade>
             <TextWrapper className="title" size="27" margin="10%">
               {' '}
@@ -219,7 +227,7 @@ function HomeMain({ match }) {
                 : 'I Say Lab welcomes all children who are actively learning language and interested in language activities, including children who are slow in language development, and bilingual children who speak two languages. I Say Lab aims to help all children learn how to use language in a fun way and to reach their full potential in communicating with others. I Say Lab provides specialized technologies and patent-based programs developed through many years of research and in alignment with theoretical backgrounds, offering an accurate evaluation of children’s language skills and effective language support services.'}
             </DetailWrapper>
           </Fade>
-        </ImageWrapper>
+        </ImageWrapper> */}
 
         <WelcomeWrapper>
           <WelcomeImage src={Welcome} />
