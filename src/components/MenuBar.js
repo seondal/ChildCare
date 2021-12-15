@@ -64,6 +64,9 @@ function MenuBar({ change }) {
           alignItems: 'center',
         }}
       >
+        <Menu.Menu position="left" style={{ marginRight: '30px' }}>
+          hamberger
+        </Menu.Menu>
         <a
           style={{
             marginRight: '30px',
@@ -93,7 +96,7 @@ function MenuBar({ change }) {
                   fontWeight: '600',
                   fontFamily: 'payboocExtraBold',
                 }}
-                name="홈"
+                name={change == 'kor' ? '홈' : 'Home'}
                 onClick={() => history.push(`/main/kor`)}
               />
               <Menu.Item
