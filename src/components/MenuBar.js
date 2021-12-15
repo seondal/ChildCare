@@ -26,6 +26,27 @@ function MenuBar({ change }) {
       history.push(`/${now}/eng`)
     }, 100)
   }
+
+  //모바일 여부 감지
+  const [isMobile, setIsMobile] = useState(false)
+  const resizingHandler = () => {
+    if (window.innerWidth <= 430) {
+      setIsMobile(true)
+    } else {
+      setIsMobile(false)
+    }
+  }
+  useEffect(() => {
+    if (window.innerWidth <= 430) {
+      setIsMobile(true)
+    }
+
+    window.addEventListener('resize', resizingHandler)
+    return () => {
+      window.removeEventListener('resize', resizingHandler)
+    }
+  }, [])
+
   const menuBar =
     change == 'kor' ? (
       <Menu
@@ -41,7 +62,8 @@ function MenuBar({ change }) {
           borderBottom: 'none',
           fontSize: '1.8vh',
           alignItems: 'center',
-        }}>
+        }}
+      >
         <a
           style={{
             marginRight: '30px',
@@ -49,7 +71,8 @@ function MenuBar({ change }) {
             color: '#FFFFFF',
             fontSize: '25px',
             fontWeight: '600',
-          }}>
+          }}
+        >
           {' '}
           <img
             src="/002.png"
@@ -121,7 +144,8 @@ function MenuBar({ change }) {
           borderBottom: 'none',
           fontSize: '1.8vh',
           alignItems: 'center',
-        }}>
+        }}
+      >
         <a
           style={{
             marginRight: '30px',
@@ -130,7 +154,8 @@ function MenuBar({ change }) {
             fontSize: '25px',
             fontWeight: '600',
           }}
-          href="/main/eng">
+          href="/main/eng"
+        >
           {' '}
           <img src="/002.png" width="50px" height="50px" />
         </a>
