@@ -201,6 +201,11 @@ const Banner = styled.div`
     background-color: #f9be00;
     cursor: pointer;
   }
+
+  @media (max-width: 430px) {
+    margin: 10px;
+    margin-bottom: 0px;
+  }
 `
 
 function HomeMain({ match }) {
