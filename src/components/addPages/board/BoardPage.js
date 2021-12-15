@@ -147,6 +147,7 @@ function BoardPage({ match }) {
     <div>
       <Wrapper>
         <MenuBar change={lang} />
+
         <RowWrapper>
           <ImageWrapper src={BackgroundImage}>
             <TextColumnWrapper>

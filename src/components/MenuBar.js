@@ -101,7 +101,7 @@ function MenuBar({ change }) {
                 fontFamily: 'payboocExtraBold',
               }}
               name={change == 'kor' ? '홈' : 'Home'}
-              onClick={() => history.push(`/main/kor`)}
+              onClick={() => history.push(`/main/${change}`)}
             />
             <Menu.Item
               style={{
@@ -110,7 +110,7 @@ function MenuBar({ change }) {
                 fontFamily: 'payboocExtraBold',
               }}
               name={change == 'kor' ? '연구소 소개' : 'Lab'}
-              onClick={() => history.push(`/lab/kor`)}
+              onClick={() => history.push(`/lab/${change}`)}
             />
             <Menu.Item
               style={{
@@ -119,7 +119,7 @@ function MenuBar({ change }) {
                 fontFamily: 'payboocExtraBold',
               }}
               name={change == 'kor' ? '프로그램 소개' : 'Program'}
-              onClick={() => history.push(`/program/kor`)}
+              onClick={() => history.push(`/program/${change}`)}
             />
             <Menu.Item
               style={{
@@ -128,7 +128,7 @@ function MenuBar({ change }) {
                 fontFamily: 'payboocExtraBold',
               }}
               name={change == 'kor' ? '연구소 소식' : 'News'}
-              onClick={() => history.push(`/board/kor`)}
+              onClick={() => history.push(`/board/${change}`)}
             />
           </>
         )}
