@@ -1,7 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Menu } from 'semantic-ui-react'
-
+import { GiHamburgerMenu } from 'react-icons/gi'
 import { useHistory } from 'react-router-dom'
+import { MenuItem } from 'material-ui'
 
 function MenuBar({ change }) {
   const pathname = window.location.pathname
@@ -63,14 +64,6 @@ function MenuBar({ change }) {
         alignItems: 'center',
       }}
     >
-      {isMobile ? (
-        <Menu.Menu position="left" style={{ marginRight: '30px' }}>
-          hamberger
-        </Menu.Menu>
-      ) : (
-        <></>
-      )}
-
       <a
         style={{
           marginRight: '30px',
@@ -88,50 +81,44 @@ function MenuBar({ change }) {
           onClick={() => history.push(`/main/kor`)}
         />
       </a>
-
       <Menu.Menu position="right" style={{ marginRight: '30px' }}>
-        {isMobile ? (
-          <></>
-        ) : (
-          <>
-            <Menu.Item
-              style={{
-                color: 'white',
-                fontWeight: '600',
-                fontFamily: 'payboocExtraBold',
-              }}
-              name={change == 'kor' ? '홈' : 'Home'}
-              onClick={() => history.push(`/main/${change}`)}
-            />
-            <Menu.Item
-              style={{
-                color: 'white',
-                fontWeight: '600',
-                fontFamily: 'payboocExtraBold',
-              }}
-              name={change == 'kor' ? '연구소 소개' : 'Lab'}
-              onClick={() => history.push(`/lab/${change}`)}
-            />
-            <Menu.Item
-              style={{
-                color: 'white',
-                fontWeight: '600',
-                fontFamily: 'payboocExtraBold',
-              }}
-              name={change == 'kor' ? '프로그램 소개' : 'Program'}
-              onClick={() => history.push(`/program/${change}`)}
-            />
-            <Menu.Item
-              style={{
-                color: 'white',
-                fontWeight: '600',
-                fontFamily: 'payboocExtraBold',
-              }}
-              name={change == 'kor' ? '연구소 소식' : 'News'}
-              onClick={() => history.push(`/board/${change}`)}
-            />
-          </>
-        )}
+        <Menu.Item
+          style={{
+            color: 'white',
+            fontWeight: '600',
+            fontFamily: 'payboocExtraBold',
+          }}
+          name={change == 'kor' ? '홈' : 'Home'}
+          onClick={() => history.push(`/main/${change}`)}
+        />
+        <Menu.Item
+          style={{
+            color: 'white',
+            fontWeight: '600',
+            fontFamily: 'payboocExtraBold',
+          }}
+          name={change == 'kor' ? '연구소 소개' : 'Lab'}
+          onClick={() => history.push(`/lab/${change}`)}
+        />
+        <Menu.Item
+          style={{
+            color: 'white',
+            fontWeight: '600',
+            fontFamily: 'payboocExtraBold',
+          }}
+          name={change == 'kor' ? '프로그램 소개' : 'Program'}
+          onClick={() => history.push(`/program/${change}`)}
+        />
+        <Menu.Item
+          style={{
+            color: 'white',
+            fontWeight: '600',
+            fontFamily: 'payboocExtraBold',
+          }}
+          name={change == 'kor' ? '연구소 소식' : 'News'}
+          onClick={() => history.push(`/board/${change}`)}
+        />
+
         <Menu.Item
           style={{
             color: 'white',
@@ -145,7 +132,48 @@ function MenuBar({ change }) {
     </Menu>
   )
 
-  return <div style={{ height: '70px', margin: '0px' }}>{menuBar}</div>
+  const menuBarMobile = (
+    <Menu
+      fixed="top"
+      style={{
+        height: '7vh',
+        backgroundColor: '#F9BE00',
+        padding: '5px',
+        borderBottom: 'none',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <div>
+        <GiHamburgerMenu color="white" size="25px" />
+      </div>
+      <div style={{ marginRight: '13vh', marginLeft: '13vh' }}>
+        <img
+          src="/002.png"
+          width="50px"
+          height="50px"
+          onClick={() => history.push(`/main/kor`)}
+        />
+      </div>
+      <div
+        style={{
+          width: '40px',
+          color: 'white',
+          fontWeight: '600',
+          fontFamily: 'payboocExtraBold',
+        }}
+        onClick={change == 'kor' ? onLanguage2 : onLanguage}
+      >
+        {change == 'kor' ? 'Eng' : '한국어'}
+      </div>
+    </Menu>
+  )
+
+  return (
+    <div style={{ height: '70px', margin: '0px' }}>
+      {isMobile ? menuBarMobile : menuBar}
+    </div>
+  )
 }
 
 export default MenuBar
