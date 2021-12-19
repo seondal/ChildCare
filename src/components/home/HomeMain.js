@@ -111,7 +111,7 @@ const WelcomeWrapper = styled.div`
     display: flex;
     margin-top: 20px;
     margin-bottom: 50px;
-    width:90%;
+    width: 90%;
     padding: 30px;
     padding-top: 50px;
     height: 350px;
@@ -295,7 +295,7 @@ function HomeMain({ match }) {
           <WelcomeText>
             {' '}
             <Fade bottom cascade>
-              <Typography >
+              <Typography>
                 <Title
                   level={isMobile ? 4 : 3}
                   style={
@@ -469,11 +469,15 @@ function HomeMain({ match }) {
             <Fade bottom cascade>
               <Typography>
                 <Title
-                  level={isMobile ? 4 : 3}
-                  style={{
-                    marginBottom: '50px',
-                    fontFamily: 'payboocExtraBold',
-                  }}
+                  level={isMobile ? 5 : 3}
+                  style={
+                    isMobile
+                      ? { marginBottom: '30px', fontFamily: 'payboocExtraBold' }
+                      : {
+                          marginBottom: '50px',
+                          fontFamily: 'payboocExtraBold',
+                        }
+                  }
                 >
                   {lang == 'kor'
                     ? '아동언어연구실을 더 알아보세요!'
