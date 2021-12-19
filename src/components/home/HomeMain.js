@@ -114,7 +114,7 @@ const WelcomeWrapper = styled.div`
     width: 90%;
     padding: 30px;
     padding-top: 50px;
-    height: 350px;
+    height: auto;
     flex-direction: column;
 
     .contents {
