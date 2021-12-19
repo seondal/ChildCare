@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
+import styled from 'styled-components'
 import { Menu } from 'semantic-ui-react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useHistory } from 'react-router-dom'
@@ -14,6 +15,7 @@ function MenuBar({ change }) {
   let now = window.location.pathname.split('/')[1]
   const [langState, setLangState] = useState(now)
   const path = pathname === '/' ? 'home' : pathname.substr(1)
+  const [isOpen, setIsOpen] = useState(false)
 
   const onLanguage = () => {
     setTimeout(() => {
@@ -132,41 +134,87 @@ function MenuBar({ change }) {
     </Menu>
   )
 
+  const Slide = styled.div`
+    .show-slide {
+      position: fixed;
+      width: 50%;
+      height: 100%;
+      z-index: 1;
+      top: 7vh;
+      background-color: #f9be00;
+      left: 0px;
+      transition: 1s;
+      padding: 20px;
+    }
+
+    .hide-slide {
+      display: none;
+    }
+  `
+  const SlideItem = styled.div`
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: payboocExtraBold;
+    margin: 20px;
+  `
   const menuBarMobile = (
-    <Menu
-      fixed="top"
-      style={{
-        height: '7vh',
-        backgroundColor: '#F9BE00',
-        padding: '5px',
-        borderBottom: 'none',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <div>
-        <GiHamburgerMenu color="white" size="25px" />
-      </div>
-      <div style={{ marginRight: '13vh', marginLeft: '13vh' }}>
-        <img
-          src="/002.png"
-          width="50px"
-          height="50px"
-          onClick={() => history.push(`/main/kor`)}
-        />
-      </div>
-      <div
+    <>
+      <Menu
+        fixed="top"
         style={{
-          width: '40px',
-          color: 'white',
-          fontWeight: '600',
-          fontFamily: 'payboocExtraBold',
+          height: '7vh',
+          backgroundColor: '#F9BE00',
+          padding: '5px',
+          borderBottom: 'none',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
-        onClick={change == 'kor' ? onLanguage2 : onLanguage}
       >
-        {change == 'kor' ? 'Eng' : '한국어'}
-      </div>
-    </Menu>
+        <div>
+          <GiHamburgerMenu
+            color="white"
+            size="25px"
+            onClick={() => setIsOpen(isOpen => !isOpen)}
+          />
+        </div>
+        <div style={{ marginRight: '13vh', marginLeft: '13vh' }}>
+          <img
+            src="/002.png"
+            width="50px"
+            height="50px"
+            onClick={() => history.push(`/main/kor`)}
+          />
+        </div>
+        <div
+          style={{
+            width: '40px',
+            color: 'white',
+            fontWeight: '600',
+            fontFamily: 'payboocExtraBold',
+          }}
+          onClick={change == 'kor' ? onLanguage2 : onLanguage}
+        >
+          {change == 'kor' ? 'Eng' : '한국어'}
+        </div>
+      </Menu>
+      <Slide>
+        <div className={isOpen ? 'show-slide' : 'hide-slide'}>
+          <SlideItem onClick={() => history.push(`/main/${change}`)}>
+            {change == 'kor' ? '홈' : 'Home'}
+          </SlideItem>
+          <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+            {change == 'kor' ? '연구소 소개' : 'Lab'}
+          </SlideItem>
+          <SlideItem onClick={() => history.push(`/program/${change}`)}>
+            {change == 'kor' ? '프로그램 소개' : 'Program'}
+          </SlideItem>
+          <SlideItem onClick={() => history.push(`/board/${change}`)}>
+            {change == 'kor' ? '연구소 소식' : 'News'}
+          </SlideItem>
+        </div>
+      </Slide>
+    </>
   )
 
   return (
