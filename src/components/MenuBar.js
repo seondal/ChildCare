@@ -134,21 +134,31 @@ function MenuBar({ change }) {
     </Menu>
   )
 
+  //MARK : Mobile
   const Slide = styled.div`
     .show-slide {
       position: fixed;
-      width: 50%;
+      width: 65%;
       height: 100%;
       z-index: 1;
       top: 7vh;
       background-color: #f9be00;
       left: 0px;
-      transition: 1s;
       padding: 20px;
+      animation: showSlide 0.2s;
     }
 
     .hide-slide {
       display: none;
+    }
+
+    @keyframes showSlide {
+      from {
+        left: -65%;
+      }
+      to {
+        left: 0px;
+      }
     }
   `
   const SlideItem = styled.div`
