@@ -30,8 +30,6 @@ import SimpleImageSlider from 'react-simple-image-slider'
 import 'antd/dist/antd.css'
 import '../../../index.css'
 import AmChartEx from './AmchartsEX'
-import AmchartsEng from './AmchartsEng'
-
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -336,8 +334,19 @@ function DetailPage({ num, lang }) {
           {lang == 'kor' ? '연구소 소개' : 'Lab '}
         </Title>
         <ContentsWrapper>
+        <Paragraph
+                style={{
+                  fontFamily: 'payboocBold',
+                  marginBottom: '3%',
+                }}>
+ 
+                  {lang == 'kor'
+                    ? '■ 2020.11.25 주식회사 임동선아이세이언어연구소 (I Say Lab) 설립 (이화여자대학교 기술지주회사 자회사)  '
+                    : '■ 2020.11.25 Establishment of ImDongSun Isay Language Research Institute (I Say Lab) '}
+
+              </Paragraph>
           <ChartWrapper>
-            {lang == 'kor' ? <AmChartEx /> : <AmchartsEng />}
+            <AmChartEx />
           </ChartWrapper>
           <Paragraph
                 style={{

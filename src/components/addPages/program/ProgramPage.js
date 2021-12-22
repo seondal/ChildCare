@@ -8,7 +8,7 @@ import '../../../App.css'
 import styled from 'styled-components'
 import 'antd/dist/antd.css'
 import { Button } from 'antd'
-import BackgroundImage from './Main4.jpg'
+import BackgroundImage from './Main4.jpeg'
 import DetailPage from './ContentsPage'
 import { withRouter } from 'react-router'
 
@@ -39,7 +39,6 @@ const ImageWrapper = styled.image`
   flex-direction: row;
   justify-content: flex-end;
   background-color: #e7e6e1;
-  background-position: center;
 `
 
 const RowWrapper = styled.div`
@@ -52,7 +51,7 @@ const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 23%;
+  width: 25%;
   margin-right: 1%;
   height: 100%;
 `

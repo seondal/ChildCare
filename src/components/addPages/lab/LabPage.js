@@ -5,7 +5,7 @@ import '../../../App.css'
 import styled from 'styled-components'
 import 'antd/dist/antd.css'
 import { Button } from 'antd'
-import BackgroundImage from './Main1.jpg'
+import BackgroundImage from './Main1.jpeg'
 import DetailPage from './DetailPage'
 import { withRouter } from 'react-router'
 
@@ -35,8 +35,7 @@ const ImageWrapper = styled.image`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-position: center;
-  background-color: #f7f7f7;
+
 `
 
 const RowWrapper = styled.div`
@@ -48,9 +47,9 @@ const RowWrapper = styled.div`
 const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 15%;
-  margin-right: 1%;
+  justify-content: center;
+  align-items:center;
+  width: 20%;
   height: 100%;
 `
 const TextColumnWrapper = styled.div`
@@ -110,6 +109,7 @@ function LabPage({ match }) {
                 style={{
                   color: 'black',
                   height: '50px',
+                  width:'80%',
                   borderRadius: '10px',
                   fontFamily: 'payboocExtraBold',
                   fontSize: '15px',
@@ -128,6 +128,7 @@ function LabPage({ match }) {
                 style={{
                   color: 'black',
                   height: '50px',
+                  width:'80%',
                   borderRadius: '10px',
                   fontFamily: 'payboocExtraBold',
                   fontSize: '15px',
@@ -146,6 +147,7 @@ function LabPage({ match }) {
                 style={{
                   color: 'black',
                   height: '50px',
+                  width:'80%',
                   borderRadius: '10px',
                   fontFamily: 'payboocExtraBold',
                   fontSize: '15px',
@@ -165,6 +167,7 @@ function LabPage({ match }) {
                   color: 'black',
                   height: '50px',
                   borderRadius: '10px',
+                  width:'80%',
                   fontFamily: 'payboocExtraBold',
                   fontSize: '15px',
                   backgroundColor: 'rgba(249, 189, 0, 0.8)',
@@ -185,6 +188,7 @@ function LabPage({ match }) {
                   borderRadius: '10px',
                   fontFamily: 'payboocExtraBold',
                   fontSize: '15px',
+                  width:'80%',
                   backgroundColor: 'rgba(249, 189, 0, 0.8)',
                   borderColor: 'rgba(241, 245, 249, 1)',
                   marginBottom: '1px',

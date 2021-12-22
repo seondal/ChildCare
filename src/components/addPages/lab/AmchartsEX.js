@@ -79,19 +79,19 @@ class AmchartsEX extends Component {
       "latitude": 38.8921,
       "longitude": -97.0241,
       "color":colorSet.getIndex(10),
-      "contents":"- Stanford University(Language and Cognition Lab)"+"\n - Northwestern University"+"\n - Hofstra University(NY)"+"\n - Richmond street school"
+      "contents":"- Stanford University (Language and Cognition Lab)"+"\n - Northwestern University"+"\n - Hofstra University (NY)"+"\n - Richmond street school (CA)"
     }, {
       "title": "Portugal",
       "latitude": 40.3369,
       "longitude": -8.3271,
       "color":colorSet.getIndex(8),
-      "contents":"- Interactive Technologies Institute, University od Lisbon"
+      "contents":"- Interactive Technologies Institute, University of Lisbon"
     }, {
       "title": "Korea",
       "latitude": 36.4571,
       "longitude":127.6272,
       "color":colorSet.getIndex(5),
-      'contents':"- Samsung Medical Center(삼성 서울병원)"+"\n -Early childhood education centers in Seoul and Gyeonggi-do (서울 및 경기도 소재 유아교육기관)"+
+      'contents':"- Samsung Medical Center (삼성 서울병원)"+"\n - Early childhood education centers in Seoul and Gyeonggi-do (서울 및 경기도 소재 유아교육기관)"+
       "\n - Seoul Foreign School (서울외국인학교)"+"\n - Seoul International School (서울국제학교)" +"\n - North London Collegiate School Jeju (NLCS 제주)"+ 
       "\n - Chadwick International School (채드윅 송도 국제학교)"+"\n - Dulwich College Seoul (덜위치칼리지 서울영국학교)"+"\n - Postech (포항공과대학교)"+"\n - Korean Institute of Brief Family Therapy (한국단기가족치료연구소)"
       +"\n - Seoul Seobu Distirct Office of Education (서울특별시 서부교육지원청)"
