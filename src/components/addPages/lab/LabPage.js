@@ -8,6 +8,7 @@ import { Button } from 'antd'
 import BackgroundImage from './Main1.jpeg'
 import DetailPage from './DetailPage'
 import { withRouter } from 'react-router'
+import { useHistory, useLocation } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   modal: {},
@@ -93,6 +94,10 @@ function LabPage({ match }) {
   const classes = useStyles()
   const [numState, setNumState] = useState(1)
   useEffect(() => setLang(match.params.lang), [match.params.lang])
+
+  const location = useLocation(1)
+  console.log(location.state)
+
   return (
     <div>
       <Wrapper>
@@ -206,7 +211,7 @@ function LabPage({ match }) {
             </ColumnWrapper>
           </ImageWrapper>
         </RowWrapper>
-        <DetailPage num={numState} lang={lang} />
+        <DetailPage num={location.state.detail} lang={lang} />
         <ImageWrapper src={BackgroundImage} />
       </Wrapper>
     </div>

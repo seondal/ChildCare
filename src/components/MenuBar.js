@@ -11,7 +11,7 @@ function MenuBar({ change }) {
   const history = useHistory()
   const [prof, setProf] = useState(false)
   const [message, setMessage] = useState('')
-  console.log(window.location.pathname.split('/'))
+  // console.log(window.location.pathname.split('/'))
   let now = window.location.pathname.split('/')[1]
   const [langState, setLangState] = useState(now)
   const path = pathname === '/' ? 'home' : pathname.substr(1)
@@ -217,21 +217,56 @@ function MenuBar({ change }) {
           <SlideItem onClick={() => history.push(`/main/${change}`)}>
             {change == 'kor' ? '> 홈' : '> Home'}
           </SlideItem>
-          <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+          <SlideItem
+            onClick={() =>
+              history.push({ pathname: `/lab/${change}`, state: { detail: 1 } })
+            }
+          >
             {change == 'kor' ? '> 연구소 소개' : '> Lab'}
           </SlideItem>
 
           <div className="lab-menu">
-            <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+            <SlideItem
+              onClick={() =>
+                history.push({
+                  pathname: `/lab/${change}`,
+                  state: { detail: 2 },
+                })
+              }
+            >
               {change == 'kor' ? '연구원 소개' : 'Researchers'}
             </SlideItem>
-            <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+            <SlideItem
+              onClick={() =>
+                history.push({
+                  pathname: `/lab/${change}`,
+                  state: { detail: 3 },
+                })
+              }
+            >
+              {' '}
               {change == 'kor' ? '연구소 전경' : 'Photo'}
             </SlideItem>
-            <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+            <SlideItem
+              onClick={() =>
+                history.push({
+                  pathname: `/lab/${change}`,
+                  state: { detail: 4 },
+                })
+              }
+            >
+              {' '}
               {change == 'kor' ? '이용안내' : 'Service'}
             </SlideItem>
-            <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+            <SlideItem
+              onClick={() =>
+                history.push({
+                  pathname: `/lab/${change}`,
+                  state: { detail: 5 },
+                })
+              }
+            >
+              {' '}
               {change == 'kor' ? '오시는 길' : 'Directions'}
             </SlideItem>
           </div>
