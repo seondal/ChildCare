@@ -87,6 +87,26 @@ const TextWrapper = styled.div`
 `
 
 function LabPage({ match }) {
+  //모바일 여부 감지
+  const [isMobile, setIsMobile] = useState(false)
+  const resizingHandler = () => {
+    if (window.innerWidth <= 430) {
+      setIsMobile(true)
+    } else {
+      setIsMobile(false)
+    }
+  }
+  useEffect(() => {
+    if (window.innerWidth <= 430) {
+      setIsMobile(true)
+    }
+
+    window.addEventListener('resize', resizingHandler)
+    return () => {
+      window.removeEventListener('resize', resizingHandler)
+    }
+  }, [])
+
   const [lang, setLang] = useState(match.params.lang)
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -211,7 +231,10 @@ function LabPage({ match }) {
             </ColumnWrapper>
           </ImageWrapper>
         </RowWrapper>
-        <DetailPage num={location.state.detail} lang={lang} />
+        <DetailPage
+          num={isMobile ? location.state.detail : numState}
+          lang={lang}
+        />
         <ImageWrapper src={BackgroundImage} />
       </Wrapper>
     </div>
