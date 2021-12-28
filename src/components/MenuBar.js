@@ -134,7 +134,7 @@ function MenuBar({ change }) {
     </Menu>
   )
 
-  //MARK : Mobile
+  // MARK: Mobile
   const Slide = styled.div`
     .show-slide {
       position: fixed;
