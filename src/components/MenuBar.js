@@ -160,6 +160,10 @@ function MenuBar({ change }) {
         left: 0px;
       }
     }
+
+    .lab-menu {
+      margin-left: 15px;
+    }
   `
   const SlideItem = styled.div`
     color: white;
@@ -211,16 +215,32 @@ function MenuBar({ change }) {
       <Slide>
         <div className={isOpen ? 'show-slide' : 'hide-slide'}>
           <SlideItem onClick={() => history.push(`/main/${change}`)}>
-            {change == 'kor' ? '홈' : 'Home'}
+            {change == 'kor' ? '> 홈' : '> Home'}
           </SlideItem>
           <SlideItem onClick={() => history.push(`/lab/${change}`)}>
-            {change == 'kor' ? '연구소 소개' : 'Lab'}
+            {change == 'kor' ? '> 연구소 소개' : '> Lab'}
           </SlideItem>
+
+          <div className="lab-menu">
+            <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+              {change == 'kor' ? '연구원 소개' : 'Researchers'}
+            </SlideItem>
+            <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+              {change == 'kor' ? '연구소 전경' : 'Photo'}
+            </SlideItem>
+            <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+              {change == 'kor' ? '이용안내' : 'Service'}
+            </SlideItem>
+            <SlideItem onClick={() => history.push(`/lab/${change}`)}>
+              {change == 'kor' ? '오시는 길' : 'Directions'}
+            </SlideItem>
+          </div>
+
           <SlideItem onClick={() => history.push(`/program/${change}`)}>
-            {change == 'kor' ? '프로그램 소개' : 'Program'}
+            {change == 'kor' ? '> 프로그램 소개' : '> Program'}
           </SlideItem>
           <SlideItem onClick={() => history.push(`/board/${change}`)}>
-            {change == 'kor' ? '연구소 소식' : 'News'}
+            {change == 'kor' ? '> 연구소 소식' : '> News'}
           </SlideItem>
         </div>
       </Slide>
