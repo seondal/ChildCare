@@ -235,7 +235,7 @@ function LabPage({ match }) {
           num={isMobile ? location.state.detail : numState}
           lang={lang}
         />
-        <ImageWrapper src={BackgroundImage} />
+        {isMobile ? <ImageWrapper src={BackgroundImage} /> : <></>}
       </Wrapper>
     </div>
   )
