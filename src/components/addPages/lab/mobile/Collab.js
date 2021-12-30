@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import map from './mapformobile.gif'
+import map from '../mapformobile.gif'
 
 const Wrapper = styled.div`
   margin-top: 20px;
@@ -11,7 +11,7 @@ const Card = styled.div`
   flex-direction: column;
   width: 100%;
   border-radius: 10px;
-  border-left: 10px solid black;
+  border-left: 15px solid black;
   padding: 18px;
   font-size: 0.9rem;
   margin: 20px 0px;
