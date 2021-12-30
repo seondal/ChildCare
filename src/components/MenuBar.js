@@ -259,6 +259,16 @@ function MenuBar({ change }) {
               onClick={() =>
                 history.push({
                   pathname: `/lab/${change}`,
+                  state: { detail: 0 },
+                })
+              }
+            >
+              {change == 'kor' ? '협력업체' : 'Partner Company'}
+            </DetailSlideItem>
+            <DetailSlideItem
+              onClick={() =>
+                history.push({
+                  pathname: `/lab/${change}`,
                   state: { detail: 2 },
                 })
               }
