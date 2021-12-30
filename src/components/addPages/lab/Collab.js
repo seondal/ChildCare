@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import map from './mapformobile.gif'
 
 const Wrapper = styled.div`
   margin-top: 20px;
@@ -10,7 +11,7 @@ const Card = styled.div`
   flex-direction: column;
   width: 100%;
   border-radius: 20px;
-  background-color: grey;
+  border-left: 20px solid black;
   padding: 18px;
   font-size: 0.9rem;
   margin: 20px 0px;
@@ -22,7 +23,10 @@ const Card = styled.div`
 const Collab = () => {
   return (
     <Wrapper>
-      <Card style={{ backgroundColor: 'white' }}>
+      <div className="img-wrapper">
+        <img style={{ width: '100%' }} src={map} />
+      </div>
+      <Card style={{ borderColor: '#C77F5E' }}>
         <h3>USA</h3>
         <div className="contents">
           <li>Stanford University (Language and Cognition Lab)</li>
@@ -31,19 +35,19 @@ const Collab = () => {
           <li>Richmond streetschool (CA)</li>
         </div>
       </Card>
-      <Card style={{ backgroundColor: 'grey' }}>
+      <Card style={{ borderColor: '#CFC661' }}>
         <h3>Canada</h3>
         <div className="contents">
           <li>University of Toronto</li>
         </div>
       </Card>
-      <Card style={{ backgroundColor: 'skyblue' }}>
+      <Card style={{ borderColor: '#DB6788' }}>
         <h3>Portugal</h3>
         <div className="contents">
           <li>Interactive Technologies Institute, University of Lisbon</li>
         </div>
       </Card>
-      <Card style={{ backgroundColor: 'lightgrey' }}>
+      <Card style={{ borderColor: '#C667DC' }}>
         <h3>Korea</h3>
         <div className="contents">
           <li>Samsung Medical Center (삼성 서울병원)</li>
