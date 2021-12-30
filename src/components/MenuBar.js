@@ -309,70 +309,74 @@ function MenuBar({ change }) {
             <DetailSlideItem
               onClick={() =>
                 history.push({
-                  pathname: `/lab/${change}`,
+                  pathname: `/program/${change}`,
+                  state: { detail: 1 },
+                })
+              }
+            >
+              {change == 'kor'
+                ? '언어발달 평가 및 언어지원'
+                : 'Language development evaluation'}
+            </DetailSlideItem>
+            <DetailSlideItem
+              onClick={() =>
+                history.push({
+                  pathname: `/program/${change}`,
                   state: { detail: 2 },
                 })
               }
             >
-              {change == 'kor' ? '언어발달 평가 및 언어지원' : 'Researchers'}
+              {change == 'kor'
+                ? '언어발달 전문가와 함께하는 책읽기'
+                : 'Book reading with experts'}
             </DetailSlideItem>
             <DetailSlideItem
               onClick={() =>
                 history.push({
-                  pathname: `/lab/${change}`,
+                  pathname: `/program/${change}`,
                   state: { detail: 3 },
-                })
-              }
-            >
-              {change == 'kor' ? '언어발달 전문가와 함께하는 책읽기' : 'Photo'}
-            </DetailSlideItem>
-            <DetailSlideItem
-              onClick={() =>
-                history.push({
-                  pathname: `/lab/${change}`,
-                  state: { detail: 4 },
                 })
               }
             >
               {change == 'kor'
                 ? '자녀의 언어발달을 촉진하기 위한 부모 코칭'
-                : 'Service'}
+                : 'Parent coaching'}
             </DetailSlideItem>
             <DetailSlideItem
               onClick={() =>
                 history.push({
-                  pathname: `/lab/${change}`,
-                  state: { detail: 5 },
+                  pathname: `/program/${change}`,
+                  state: { detail: 4 },
                 })
               }
             >
               {change == 'kor'
                 ? '언어발달 관련 영역 전문가 교육'
-                : 'Directions'}
+                : 'Language area expert training'}
             </DetailSlideItem>
             <DetailSlideItem
               onClick={() =>
                 history.push({
-                  pathname: `/lab/${change}`,
+                  pathname: `/program/${change}`,
                   state: { detail: 5 },
                 })
               }
             >
               {change == 'kor'
                 ? '주말프로그램 : 책과 함께하는 휴식 시간'
-                : 'Directions'}
+                : 'Weekend: Break Time with Books'}
             </DetailSlideItem>
             <DetailSlideItem
               onClick={() =>
                 history.push({
-                  pathname: `/lab/${change}`,
-                  state: { detail: 5 },
+                  pathname: `/program/${change}`,
+                  state: { detail: 6 },
                 })
               }
             >
               {change == 'kor'
                 ? '특별프로그램: 여름/겨울방학 책읽기 캠프'
-                : 'Directions'}
+                : 'Special: Vacation Reading Camp'}
             </DetailSlideItem>
           </ul>
           <SlideItem onClick={() => history.push(`/board/${change}`)}>

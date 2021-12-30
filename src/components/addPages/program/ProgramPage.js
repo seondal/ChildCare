@@ -11,6 +11,7 @@ import { Button } from 'antd'
 import BackgroundImage from './Main4.jpeg'
 import DetailPage from './ContentsPage'
 import { withRouter } from 'react-router'
+import { useHistory, useLocation } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   modal: {},
@@ -27,6 +28,10 @@ const Wrapper = styled.div`
   align-items: center;
   min-height: 150vh;
   width: 100%;
+
+  @media (max-width: 430px) {
+    overflow-x: hidden;
+  }
 `
 
 const ImageWrapper = styled.image`
@@ -90,6 +95,26 @@ const ContentsWrapper = styled.div`
 `
 
 function ProgramPage({ match }) {
+  //모바일 여부 감지
+  const [isMobile, setIsMobile] = useState(false)
+  const resizingHandler = () => {
+    if (window.innerWidth <= 430) {
+      setIsMobile(true)
+    } else {
+      setIsMobile(false)
+    }
+  }
+  useEffect(() => {
+    if (window.innerWidth <= 430) {
+      setIsMobile(true)
+    }
+
+    window.addEventListener('resize', resizingHandler)
+    return () => {
+      window.removeEventListener('resize', resizingHandler)
+    }
+  }, [])
+
   const [lang, setLang] = useState(match.params.lang)
   useEffect(() => setLang(match.params.lang), [match.params.lang])
   useEffect(() => {
@@ -97,6 +122,9 @@ function ProgramPage({ match }) {
   })
   const classes = useStyles()
   const [numState, setNumState] = useState(1)
+
+  const location = useLocation(1)
+  console.log(location.state)
 
   return (
     <div>
@@ -238,7 +266,16 @@ function ProgramPage({ match }) {
           </ImageWrapper>
         </RowWrapper>
         <ContentsWrapper>
-          <DetailPage num={numState} lang={lang} />
+          <DetailPage
+            num={
+              isMobile
+                ? location.state === undefined
+                  ? 1
+                  : location.state.detail
+                : numState
+            }
+            lang={lang}
+          />
         </ContentsWrapper>
       </Wrapper>
     </div>
