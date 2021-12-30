@@ -51,6 +51,10 @@ const RowWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 430px) {
+    display: none;
+  }
 `
 const ColumnWrapper = styled.div`
   display: flex;
