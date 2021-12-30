@@ -42,6 +42,7 @@ const Wrapper = styled.div`
 
   @media (max-width: 430px) {
     padding: 20px;
+    overflow-x: hidden;
   }
 `
 const ContentsWrapper = styled.div`
@@ -694,31 +695,55 @@ function DetailPage({ num, lang }) {
     )
   } else if (num == 3) {
     return (
-      <Wrapper>
-        <Title
-          level={3}
-          style={{
-            fontFamily: 'payboocExtraBold',
-            marginBottom: '5%',
-            marginTop: '5%',
-            marginLeft: '5%',
-          }}
-        >
-          {lang == 'kor' ? '연구소 전경' : 'Pictures'}
-        </Title>
+      <>
+        {isMobile ? (
+          <Wrapper>
+            <Title
+              level={3}
+              style={{
+                fontFamily: 'payboocExtraBold',
+                marginBottom: '5%',
+                marginTop: '5%',
+                marginLeft: '5%',
+              }}
+            >
+              {lang == 'kor' ? '연구소 전경' : 'Pictures'}
+            </Title>
+            {images.map(images => (
+              <img
+                src={images.url}
+                style={{ width: '100%', marginBottom: '30px' }}
+              />
+            ))}
+          </Wrapper>
+        ) : (
+          <Wrapper>
+            <Title
+              level={3}
+              style={{
+                fontFamily: 'payboocExtraBold',
+                marginBottom: '5%',
+                marginTop: '5%',
+                marginLeft: '5%',
+              }}
+            >
+              {lang == 'kor' ? '연구소 전경' : 'Pictures'}
+            </Title>
 
-        <ContentsWrapper>
-          <Fade cascade>
-            <SimpleImageSlider
-              width={896}
-              height={504}
-              images={images}
-              showBullets={true}
-              showNavs={true}
-            />
-          </Fade>
-        </ContentsWrapper>
-      </Wrapper>
+            <ContentsWrapper>
+              <Fade cascade>
+                <SimpleImageSlider
+                  width={896}
+                  height={504}
+                  images={images}
+                  showBullets={true}
+                  showNavs={true}
+                />
+              </Fade>
+            </ContentsWrapper>
+          </Wrapper>
+        )}
+      </>
     )
   } else if (num == 4) {
     return (
