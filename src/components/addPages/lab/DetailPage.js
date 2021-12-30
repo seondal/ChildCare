@@ -54,6 +54,16 @@ const Wrapper = styled.div`
       align-items: center;
       margin-bottom: 50px;
     }
+
+    .address {
+      border: solid 1px lightgray;
+      text-align: center;
+      width: 100%;
+      padding: 20px;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin: 20px 0px;
+    }
   }
 `
 const ContentsWrapper = styled.div`
@@ -135,6 +145,10 @@ const ParkingWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+  }
 `
 const DirectionWrapper = styled.div`
   width: 80%;
@@ -237,6 +251,11 @@ const ParkImage = styled.image`
     width: 350px;
     height: 300px;
   }
+
+  @media (max-width: 430px) {
+    margin-top: 20px;
+    width: 300px;
+  }
 `
 const ParkingImage = styled.image`
   background: url(${props => props.src});
@@ -259,6 +278,10 @@ const ParkingText = styled.div`
   align-items: center;
   background-color: rgba(237, 237, 237, 0);
   margin-right: 5%;
+
+  @media (max-width: 430px) {
+    width: 100%;
+  }
 `
 const RowImage = styled.div`
   display: flex;
@@ -956,43 +979,72 @@ function DetailPage({ num, lang }) {
         >
           {lang == 'kor' ? '오시는 길' : 'Address '}
         </Title>
-        <Title
-          level={5}
-          style={{
-            fontFamily: 'payboocExtraBold',
-            marginTop: '3%',
-            marginLeft: '5%',
-            textAlign: 'center',
-          }}
-        >
-          {lang == 'kor'
-            ? '서울특별시 강남구 압구정로 29길 68, 금강아케이드상가 2층'
-            : '68, Apgujeong-ro 29-gil, Gangnam-gu, Seoul, Republic of Korea'}
-        </Title>
-        <Title
-          level={5}
-          style={{
-            fontFamily: 'payboocBold',
-            marginLeft: '5%',
-            marginBottom: '1%',
-            textAlign: 'center',
-          }}
-        >
-          {lang == 'kor'
-            ? '지하철 3호선: 압구정역 1번 출구에서 도보 10분'
-            : 'Subway Line number 3: 10 minute walking from Apgujeong Station'}
-        </Title>
+        {isMobile ? (
+          <div className="address">
+            {lang == 'kor'
+              ? '서울특별시 강남구 압구정로 29길 68,'
+              : '68, Apgujeong-ro 29-gil, Gangnam-gu,'}
+            <br />
+            {lang == 'kor'
+              ? '금강아케이드상가 2층'
+              : 'Seoul, Republic of Korea'}
+          </div>
+        ) : (
+          <Title
+            level={5}
+            style={{
+              fontFamily: 'payboocExtraBold',
+              marginTop: '3%',
+              marginLeft: '5%',
+              textAlign: 'center',
+            }}
+          ></Title>
+        )}
 
-        <ContentsWrapper>
-          <DirectionWrapper>
-            <FadeIn>
-              <RowImage>
-                <DicImage src={'https://ifh.cc/g/SEydLP.png'} />
-                <DicImage src={'https://ifh.cc/g/hdCvBZ.png'} />
-              </RowImage>
-            </FadeIn>
-          </DirectionWrapper>
-        </ContentsWrapper>
+        {isMobile ? (
+          <>
+            <Title
+              level={5}
+              style={{
+                fontFamily: 'payboocBold',
+                marginBottom: '1%',
+                textAlign: 'center',
+              }}
+            >
+              {lang == 'kor'
+                ? '지하철 3호선: 압구정역 1번 출구에서 도보 10분'
+                : 'Subway Line number 3: 10 minute walking from Apgujeong Station'}
+            </Title>
+            <DicImage src={'https://ifh.cc/g/SEydLP.png'} />
+            <DicImage src={'https://ifh.cc/g/hdCvBZ.png'} />
+          </>
+        ) : (
+          <>
+            <Title
+              level={5}
+              style={{
+                fontFamily: 'payboocBold',
+                marginLeft: '5%',
+                marginBottom: '1%',
+                textAlign: 'center',
+              }}
+            >
+              {lang == 'kor'
+                ? '지하철 3호선: 압구정역 1번 출구에서 도보 10분'
+                : 'Subway Line number 3: 10 minute walking from Apgujeong Station'}
+            </Title>
+            <ContentsWrapper>
+              <DirectionWrapper>
+                <FadeIn>
+                  <RowImage>
+                    <DicImage src={'https://ifh.cc/g/SEydLP.png'} />
+                    <DicImage src={'https://ifh.cc/g/hdCvBZ.png'} />
+                  </RowImage>
+                </FadeIn>
+              </DirectionWrapper>
+            </ContentsWrapper>
+          </>
+        )}
         <Divider />
         <Title
           level={3}
