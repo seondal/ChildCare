@@ -18,6 +18,10 @@ const ImageWrapper = styled.image`
   flex-direction: row;
   justify-content: flex-end;
   background-color: #f7f7f7;
+
+  @media (max-width: 430px) {
+    height: auto;
+  }
 `
 
 const useStyles = makeStyles(theme => ({
@@ -57,6 +61,11 @@ const TextColumnWrapper = styled.div`
   height: 50px;
   width: 50%;
   padding: 40px;
+
+  @media (max-width: 430px) {
+    width: 100%;
+    padding: 100px 0px;
+  }
 `
 
 const TextWrapper = styled.div`
@@ -69,8 +78,15 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+
   @media (max-width: 1024px) {
     font-size: ${props => props.size - 5 || 12}px;
+  }
+
+  @media (max-width: 430px) {
+    margin: 0px;
+    justify-content: center;
+    font-size: ${props => props.size - 6 || 12}px;
   }
 `
 const ContentsWrapper = styled.div`
@@ -79,6 +95,11 @@ const ContentsWrapper = styled.div`
   justify-content: flex-start;
   width: 80%;
   padding-top: 30px;
+
+  @media (max-width: 430px) {
+    width: 100%;
+    height: auto;
+  }
 `
 
 function BoardPage({ match }) {
@@ -160,7 +181,7 @@ function BoardPage({ match }) {
               <TextWrapper size="18">
                 {' '}
                 {lang == 'kor'
-                  ? ' ISayLab 새로운 소식을 확인해보세요.'
+                  ? ' ISayLab의 새로운 소식을 확인해보세요.'
                   : 'Check out ISayLAb`s news.'}{' '}
               </TextWrapper>
             </TextColumnWrapper>
