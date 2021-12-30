@@ -43,6 +43,17 @@ const Wrapper = styled.div`
   @media (max-width: 430px) {
     padding: 20px;
     overflow-x: hidden;
+
+    .op-time {
+      display: flex;
+      flex-direction: column;
+      border: solid 1px lightgray;
+      width: 100%;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+    }
   }
 `
 const ContentsWrapper = styled.div`
@@ -70,9 +81,18 @@ const ContentsWrapper3 = styled.div`
   align-items: center;
   padding-right: 5%;
   padding-left: 5%;
+
   @media (max-width: 1224px) {
     padding-right: 5%;
     padding-left: 5%;
+  }
+
+  @media (max-width: 430px) {
+    .custome-step {
+      margin: 30px;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 `
 
@@ -145,6 +165,12 @@ const ProgressWrapper = styled.div`
   margin-top: 3%;
   font-size: 16px;
   font-family: 'payboocMedium';
+
+  @media (max-width: 430px) {
+    padding: 10px;
+    width: 100%;
+    height: 230px;
+  }
 `
 const ServiceWrapper = styled.div`
   width: 400px;
@@ -759,25 +785,68 @@ function DetailPage({ num, lang }) {
         >
           {lang == 'kor' ? '운영시간' : 'Operating hours'}
         </Title>
-        <Title
-          level={5}
-          style={{
-            fontFamily: 'payboocBold',
-            marginLeft: '5%',
-          }}
-        >
-          {lang == 'kor' ? '평일 9:00~17:00' : 'Weekdays from 9:00 to 17:00'}
-        </Title>
-        <Title
-          level={5}
-          style={{
-            fontFamily: 'payboocBold',
-            marginLeft: '5%',
-            marginBottom: '5%',
-          }}
-        >
-          {lang == 'kor' ? '토요일 9:00~12:00' : 'Saturday from 9:00 to 12:00'}
-        </Title>
+        {isMobile ? (
+          <div className="op-time">
+            <Title
+              level={5}
+              style={{
+                fontFamily: 'payboocBold',
+                marginLeft: '5%',
+              }}
+            >
+              {lang == 'kor'
+                ? '평일 9:00~17:00'
+                : 'Weekdays from 9:00 to 17:00'}
+            </Title>
+            <Title
+              level={5}
+              style={
+                isMobile
+                  ? { fontFamily: 'payboocBold', marginLeft: '5%' }
+                  : {
+                      fontFamily: 'payboocBold',
+                      marginLeft: '5%',
+                      marginBottom: '5%',
+                    }
+              }
+            >
+              {lang == 'kor'
+                ? '토요일 9:00~12:00'
+                : 'Saturday from 9:00 to 12:00'}
+            </Title>
+          </div>
+        ) : (
+          <>
+            <Title
+              level={5}
+              style={{
+                fontFamily: 'payboocBold',
+                marginLeft: '5%',
+              }}
+            >
+              {lang == 'kor'
+                ? '평일 9:00~17:00'
+                : 'Weekdays from 9:00 to 17:00'}
+            </Title>
+            <Title
+              level={5}
+              style={
+                isMobile
+                  ? { fontFamily: 'payboocBold', marginLeft: '5%' }
+                  : {
+                      fontFamily: 'payboocBold',
+                      marginLeft: '5%',
+                      marginBottom: '5%',
+                    }
+              }
+            >
+              {lang == 'kor'
+                ? '토요일 9:00~12:00'
+                : 'Saturday from 9:00 to 12:00'}
+            </Title>
+          </>
+        )}
+
         <Title
           level={3}
           style={{
