@@ -207,7 +207,9 @@ function MenuBar({ change }) {
           <GiHamburgerMenu
             color="white"
             size="25px"
-            onClick={() => setIsOpen(isOpen => !isOpen)}
+            onClick={() => {
+              setIsOpen(isOpen => !isOpen)
+            }}
           />
         </div>
         <div style={{ marginRight: '13vh', marginLeft: '13vh' }}>
@@ -246,62 +248,68 @@ function MenuBar({ change }) {
 
           <ul className={isOpenLab ? 'show-program' : 'hide-program'}>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/lab/${change}`,
                   state: { detail: 1 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor' ? '연구소 소개' : 'Lab'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/lab/${change}`,
                   state: { detail: 0 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor' ? '협력업체' : 'Partner Company'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/lab/${change}`,
                   state: { detail: 2 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor' ? '연구원 소개' : 'Researchers'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/lab/${change}`,
                   state: { detail: 3 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor' ? '연구소 전경' : 'Photo'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/lab/${change}`,
                   state: { detail: 4 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor' ? '이용안내' : 'Service'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/lab/${change}`,
                   state: { detail: 5 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor' ? '오시는 길' : 'Directions'}
             </DetailSlideItem>
@@ -317,72 +325,78 @@ function MenuBar({ change }) {
           </SlideItem>
           <ul className={isOpenProgram ? 'show-program' : 'hide-program'}>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/program/${change}`,
                   state: { detail: 1 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor'
                 ? '언어발달 평가 및 언어지원'
                 : 'Language development evaluation'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/program/${change}`,
                   state: { detail: 2 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor'
                 ? '언어발달 전문가와 함께하는 책읽기'
                 : 'Book reading with experts'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/program/${change}`,
                   state: { detail: 3 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor'
                 ? '자녀의 언어발달을 촉진하기 위한 부모 코칭'
                 : 'Parent coaching'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/program/${change}`,
                   state: { detail: 4 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor'
                 ? '언어발달 관련 영역 전문가 교육'
                 : 'Language area expert training'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/program/${change}`,
                   state: { detail: 5 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor'
                 ? '주말프로그램 : 책과 함께하는 휴식 시간'
                 : 'Weekend: Break Time with Books'}
             </DetailSlideItem>
             <DetailSlideItem
-              onClick={() =>
+              onClick={() => {
                 history.push({
                   pathname: `/program/${change}`,
                   state: { detail: 6 },
                 })
-              }
+                setIsOpen(false)
+              }}
             >
               {change == 'kor'
                 ? '특별프로그램: 여름/겨울방학 책읽기 캠프'
