@@ -232,7 +232,13 @@ function LabPage({ match }) {
           </ImageWrapper>
         </RowWrapper>
         <DetailPage
-          num={isMobile ? location.state.detail : numState}
+          num={
+            isMobile
+              ? location.state === undefined
+                ? 1
+                : location.state.detail
+              : numState
+          }
           lang={lang}
         />
         {isMobile ? <ImageWrapper src={BackgroundImage} /> : <></>}

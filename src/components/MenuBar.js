@@ -244,7 +244,6 @@ function MenuBar({ change }) {
                 })
               }
             >
-              {' '}
               {change == 'kor' ? '연구소 전경' : 'Photo'}
             </SlideItem>
             <SlideItem
@@ -255,7 +254,6 @@ function MenuBar({ change }) {
                 })
               }
             >
-              {' '}
               {change == 'kor' ? '이용안내' : 'Service'}
             </SlideItem>
             <SlideItem
