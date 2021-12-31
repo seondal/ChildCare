@@ -83,7 +83,11 @@ function ContentsPage({ num, lang }) {
 
               <img
                 src={Pic1}
-                style={isMobile ? {} : { width: '400px', marginLeft: '15%' }}
+                style={
+                  isMobile
+                    ? { width: '100%' }
+                    : { width: '400px', marginLeft: '15%' }
+                }
               />
             </Paragraph>
           </Fade>
@@ -118,7 +122,11 @@ function ContentsPage({ num, lang }) {
               </Title>
               <img
                 src={Pic2}
-                style={isMobile ? {} : { width: '400px', marginLeft: '15%' }}
+                style={
+                  isMobile
+                    ? { width: '100%' }
+                    : { width: '400px', marginLeft: '15%' }
+                }
               />
             </Paragraph>
             <br />
@@ -227,7 +235,11 @@ function ContentsPage({ num, lang }) {
             </Title>
             <img
               src={Pic3}
-              style={isMobile ? {} : { width: '400px', marginLeft: '15%' }}
+              style={
+                isMobile
+                  ? { width: '100%' }
+                  : { width: '400px', marginLeft: '15%' }
+              }
             />
           </Paragraph>
 
@@ -330,7 +342,11 @@ function ContentsPage({ num, lang }) {
             </Title>
             <img
               src={Pic4}
-              style={isMobile ? {} : { width: '400px', marginLeft: '15%' }}
+              style={
+                isMobile
+                  ? { width: '100%' }
+                  : { width: '400px', marginLeft: '15%' }
+              }
             />
           </Paragraph>
           <br />
@@ -469,7 +485,11 @@ function ContentsPage({ num, lang }) {
             </Paragraph>
             <img
               src={Pic5}
-              style={isMobile ? {} : { width: '400px', marginLeft: '15%' }}
+              style={
+                isMobile
+                  ? { width: '100%' }
+                  : { width: '400px', marginLeft: '15%' }
+              }
             />
           </Paragraph>
           <br />
@@ -538,7 +558,11 @@ function ContentsPage({ num, lang }) {
             </Paragraph>
             <img
               src={Pic6}
-              style={isMobile ? {} : { width: '400px', marginLeft: '15%' }}
+              style={
+                isMobile
+                  ? { width: '100%' }
+                  : { width: '400px', marginLeft: '15%' }
+              }
             />
           </Paragraph>
         </Fade>
