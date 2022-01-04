@@ -109,13 +109,13 @@ const WelcomeWrapper = styled.div`
 
   @media (max-width: 430px) {
     display: flex;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 50px;
     width: 90%;
-    padding: 30px;
-    padding-top: 50px;
+    padding: 0px 30px;
     height: auto;
     flex-direction: column;
+    text-align: center;
 
     .contents {
       line-height: 25px;
@@ -259,10 +259,12 @@ function HomeMain({ match }) {
     setLang(match.params.lang)
   }, [match.params.lang])
 
+  const [open, setOpen] = useState(false)
+
   return (
     <div>
       <Wrapper>
-        <MenuBar change={lang} />
+        <MenuBar change={lang} openProgram={open} setOpenProgram={setOpen} />
         <ImageWrapper src={BackgroundImage}>
           <Fade bottom cascade>
             <TextWrapper className="title" size="27" margin="10%">
@@ -297,7 +299,7 @@ function HomeMain({ match }) {
             <Fade bottom cascade>
               <Typography>
                 <Title
-                  level={isMobile ? 4 : 3}
+                  level={isMobile ? 5 : 3}
                   style={
                     isMobile
                       ? {
@@ -359,17 +361,10 @@ function HomeMain({ match }) {
             <Typography>
               <Title
                 level={isMobile ? 4 : 3}
-                style={
-                  isMobile
-                    ? {
-                        marginBottom: '50px',
-                        fontFamily: 'payboocExtraBold',
-                      }
-                    : {
-                        marginBottom: '50px',
-                        fontFamily: 'payboocExtraBold',
-                      }
-                }
+                style={{
+                  marginBottom: '50px',
+                  fontFamily: 'payboocExtraBold',
+                }}
               >
                 {lang == 'kor'
                   ? 'ISayLab에 대하여 더 알아보세요!'
@@ -410,7 +405,13 @@ function HomeMain({ match }) {
                 </p>
                 <p style={{ fontFamily: 'payboocBold' }}> Lab </p>
               </Banner>
-              <Banner onClick={() => history.push(`/program/kor`)}>
+              <Banner
+                onClick={
+                  isMobile
+                    ? () => setOpen(true)
+                    : () => history.push(`/program/kor`)
+                }
+              >
                 <FcGenealogy
                   style={{
                     fontSize: '40px',
@@ -453,7 +454,7 @@ function HomeMain({ match }) {
           </BannerWrapper>
         </CategoryWrapper>
 
-        <WelcomeWrapper>
+        <WelcomeWrapper style={isMobile ? { padding: '30px' } : {}}>
           {isMobile ? (
             <></>
           ) : (
@@ -470,14 +471,10 @@ function HomeMain({ match }) {
               <Typography>
                 <Title
                   level={isMobile ? 5 : 3}
-                  style={
-                    isMobile
-                      ? { marginBottom: '30px', fontFamily: 'payboocExtraBold' }
-                      : {
-                          marginBottom: '50px',
-                          fontFamily: 'payboocExtraBold',
-                        }
-                  }
+                  style={{
+                    marginBottom: '50px',
+                    fontFamily: 'payboocExtraBold',
+                  }}
                 >
                   {lang == 'kor'
                     ? '아동언어연구실을 더 알아보세요!'
@@ -511,12 +508,22 @@ function HomeMain({ match }) {
                 </Paragraph>
                 <Button
                   onClick={() => window.open('https://www.dongsunyim.com/')}
-                  style={{
-                    borderColor: 'darkgreen',
-                    color: 'darkgreen',
-                    fontWeight: 'bold',
-                    fontFamily: 'payboocMedium',
-                  }}
+                  style={
+                    isMobile
+                      ? {
+                          borderColor: 'darkgreen',
+                          color: 'darkgreen',
+                          fontWeight: 'bold',
+                          fontFamily: 'payboocMedium',
+                          marginTop: '50px',
+                        }
+                      : {
+                          borderColor: 'darkgreen',
+                          color: 'darkgreen',
+                          fontWeight: 'bold',
+                          fontFamily: 'payboocMedium',
+                        }
+                  }
                 >
                   {lang == 'kor' ? '더알아보기' : 'Learn More'}
                 </Button>
@@ -528,6 +535,9 @@ function HomeMain({ match }) {
               src={
                 'https://www.dongsunyim.com/assets/images/front-matter/logo-icon-fill@2x.png'
               }
+              style={{
+                marginBottom: `0px`,
+              }}
             />
           ) : (
             <></>

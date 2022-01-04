@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { useHistory } from 'react-router-dom'
 import { MenuItem } from 'material-ui'
 
-function MenuBar({ change }) {
+function MenuBar({ change, openProgram, setOpenProgram }) {
   const pathname = window.location.pathname
   const [open, setOpen] = useState(false)
   const history = useHistory()
@@ -138,6 +138,14 @@ function MenuBar({ change }) {
   const [isOpenLab, setIsOpenLab] = useState(false)
   const [isOpenProgram, setIsOpenProgram] = useState(false)
 
+  useEffect(() => {
+    if (openProgram) {
+      setIsOpen(() => true)
+      setIsOpenProgram(() => true)
+      setIsOpenLab(() => false)
+    }
+  })
+
   const Slide = styled.div`
     .show-slide {
       position: fixed;
@@ -209,6 +217,9 @@ function MenuBar({ change }) {
             size="25px"
             onClick={() => {
               setIsOpen(isOpen => !isOpen)
+              if (openProgram) {
+                setOpenProgram(false)
+              }
             }}
           />
         </div>
@@ -222,9 +233,7 @@ function MenuBar({ change }) {
         </div>
         <div
           style={{
-            width: '40px',
             color: 'white',
-            fontWeight: '600',
             fontFamily: 'payboocExtraBold',
           }}
           onClick={change == 'kor' ? onLanguage2 : onLanguage}
@@ -241,6 +250,9 @@ function MenuBar({ change }) {
             onClick={() => {
               setIsOpenProgram(false)
               setIsOpenLab(isOpenLab => !isOpenLab)
+              if (openProgram) {
+                setOpenProgram(false)
+              }
             }}
           >
             {change == 'kor' ? '소개' : 'About'}
