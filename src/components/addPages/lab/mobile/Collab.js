@@ -32,7 +32,7 @@ const Collab = () => {
           <li>Stanford University (Language and Cognition Lab)</li>
           <li>Northwestern University</li>
           <li>Hofstra University (NY) </li>
-          <li>Richmond streetschool (CA)</li>
+          <li>Richmond street school (CA)</li>
         </div>
       </Card>
       <Card style={{ borderColor: '#CFC661' }}>
