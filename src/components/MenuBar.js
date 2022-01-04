@@ -233,9 +233,7 @@ function MenuBar({ change, openProgram, setOpenProgram }) {
         </div>
         <div
           style={{
-            width: '40px',
             color: 'white',
-            fontWeight: '600',
             fontFamily: 'payboocExtraBold',
           }}
           onClick={change == 'kor' ? onLanguage2 : onLanguage}
