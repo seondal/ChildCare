@@ -49,13 +49,6 @@ function MenuBar({ change, openProgram, setOpenProgram }) {
     }
   }, [])
 
-  useEffect(() => {
-    if (openProgram) {
-      setIsOpen(() => true)
-      setIsOpenProgram(() => true)
-    }
-  })
-
   const menuBar = (
     <Menu
       secondary
@@ -144,6 +137,14 @@ function MenuBar({ change, openProgram, setOpenProgram }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenLab, setIsOpenLab] = useState(false)
   const [isOpenProgram, setIsOpenProgram] = useState(false)
+
+  useEffect(() => {
+    if (openProgram) {
+      setIsOpen(() => true)
+      setIsOpenProgram(() => true)
+      setIsOpenLab(() => false)
+    }
+  })
 
   const Slide = styled.div`
     .show-slide {
