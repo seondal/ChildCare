@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { useHistory } from 'react-router-dom'
 import { MenuItem } from 'material-ui'
 
-function MenuBar({ change }) {
+function MenuBar({ change, openProgram, setOpenProgram }) {
   const pathname = window.location.pathname
   const [open, setOpen] = useState(false)
   const history = useHistory()
@@ -48,6 +48,13 @@ function MenuBar({ change }) {
       window.removeEventListener('resize', resizingHandler)
     }
   }, [])
+
+  useEffect(() => {
+    if (openProgram) {
+      setIsOpen(() => true)
+      setIsOpenProgram(() => true)
+    }
+  })
 
   const menuBar = (
     <Menu
@@ -209,6 +216,9 @@ function MenuBar({ change }) {
             size="25px"
             onClick={() => {
               setIsOpen(isOpen => !isOpen)
+              if (openProgram) {
+                setOpenProgram(false)
+              }
             }}
           />
         </div>
@@ -241,6 +251,9 @@ function MenuBar({ change }) {
             onClick={() => {
               setIsOpenProgram(false)
               setIsOpenLab(isOpenLab => !isOpenLab)
+              if (openProgram) {
+                setOpenProgram(false)
+              }
             }}
           >
             {change == 'kor' ? '소개' : 'About'}

@@ -259,10 +259,12 @@ function HomeMain({ match }) {
     setLang(match.params.lang)
   }, [match.params.lang])
 
+  const [open, setOpen] = useState(false)
+
   return (
     <div>
       <Wrapper>
-        <MenuBar change={lang} />
+        <MenuBar change={lang} openProgram={open} setOpenProgram={setOpen} />
         <ImageWrapper src={BackgroundImage}>
           <Fade bottom cascade>
             <TextWrapper className="title" size="27" margin="10%">
@@ -410,7 +412,13 @@ function HomeMain({ match }) {
                 </p>
                 <p style={{ fontFamily: 'payboocBold' }}> Lab </p>
               </Banner>
-              <Banner onClick={() => history.push(`/program/kor`)}>
+              <Banner
+                onClick={
+                  isMobile
+                    ? () => setOpen(true)
+                    : () => history.push(`/program/kor`)
+                }
+              >
                 <FcGenealogy
                   style={{
                     fontSize: '40px',
