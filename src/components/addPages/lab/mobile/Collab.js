@@ -25,27 +25,6 @@ const Collab = () => {
       <div className="img-wrapper">
         <img style={{ width: '100%' }} src={map} />
       </div>
-      <Card style={{ borderColor: '#C77F5E' }}>
-        <h3>USA</h3>
-        <div className="contents">
-          <li>Stanford University (Language and Cognition Lab)</li>
-          <li>Northwestern University</li>
-          <li>Hofstra University (NY) </li>
-          <li>Richmond street school (CA)</li>
-        </div>
-      </Card>
-      <Card style={{ borderColor: '#CFC661' }}>
-        <h3>Canada</h3>
-        <div className="contents">
-          <li>University of Toronto</li>
-        </div>
-      </Card>
-      <Card style={{ borderColor: '#DB6788' }}>
-        <h3>Portugal</h3>
-        <div className="contents">
-          <li>Interactive Technologies Institute, University of Lisbon</li>
-        </div>
-      </Card>
       <Card style={{ borderColor: '#C667DC' }}>
         <h3>Korea</h3>
         <div className="contents">
@@ -66,6 +45,27 @@ const Collab = () => {
           <li>
             Seoul Seobu Distirct Office of Education (서울특별시 서부교육지원청)
           </li>
+        </div>
+      </Card>
+      <Card style={{ borderColor: '#C77F5E' }}>
+        <h3>USA</h3>
+        <div className="contents">
+          <li>Stanford University (Language and Cognition Lab)</li>
+          <li>Northwestern University</li>
+          <li>Hofstra University (NY) </li>
+          <li>Richmond street school (CA)</li>
+        </div>
+      </Card>
+      <Card style={{ borderColor: '#CFC661' }}>
+        <h3>Canada</h3>
+        <div className="contents">
+          <li>University of Toronto</li>
+        </div>
+      </Card>
+      <Card style={{ borderColor: '#DB6788' }}>
+        <h3>Portugal</h3>
+        <div className="contents">
+          <li>Interactive Technologies Institute, University of Lisbon</li>
         </div>
       </Card>
     </Wrapper>
