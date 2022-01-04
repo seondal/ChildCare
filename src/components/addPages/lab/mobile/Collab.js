@@ -17,7 +17,6 @@ const Card = styled.div`
   margin: 20px 0px;
 
   li {
-    list-style: none;
   }
 `
 const Collab = () => {
