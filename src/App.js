@@ -15,6 +15,7 @@ function App() {
         <Route path="/lab/:lang" component={LabPage} />
         <Route path="/program/:lang" component={ProgramPage} />
         <Route path="/board/:lang" component={BoardPage} />
+        <Route path='/' component={Home} />
       </Switch>
       <Footer />
     </Router>

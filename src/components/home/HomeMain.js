@@ -257,6 +257,9 @@ function HomeMain({ match }) {
 
   useEffect(() => {
     setLang(match.params.lang)
+    if(match.params.lang==undefined){
+      history.push(`/main/kor`)
+    }
   }, [match.params.lang])
 
   const [open, setOpen] = useState(false)

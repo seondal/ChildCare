@@ -214,6 +214,7 @@ function BoardPage({ match }) {
             >
               {newsState.member.title}
             </Title>
+            <img src={newsState.member.image} style={{width:'80%'}}/>
             <Paragraph
               style={{
                 fontFamily: 'payboocMedium',
@@ -275,9 +276,10 @@ let newsData = [
   },
   {
     date: '2021-12-01',
-    source: 2,
+    source: 3,
     theme: '아이세이 연구소',
     title: '주차 안내(Parking guide)',
+    image:BackgroundImage,
     contents:
       'I Say Lab은 금강아케이드(서울특별시 강남구 압구정로 29길 68) 2층에 위치하고 있으며, 건물 주위에 유료 또는 무료로 주차할 수 있는 공간들이 있습니다. 주차와 관련된 구체적인 내용은 I Say Lab 홈페이지에서 ‘연구소 소개’의 ‘오시는 길‘ 메뉴를 확인해 주시기 바랍니다.',
     contentsEng:
