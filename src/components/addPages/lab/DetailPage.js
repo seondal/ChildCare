@@ -998,7 +998,11 @@ function DetailPage({ num, lang }) {
               marginLeft: '5%',
               textAlign: 'center',
             }}
-          ></Title>
+          >
+            {lang == 'kor'
+              ? '서울특별시 강남구 압구정로 29길 68, 금강아케이드상가 2층'
+              : '68, Apgujeong-ro 29-gil, Gangnam-gu, Seoul, Republic of Korea'}
+          </Title>
         )}
 
         {isMobile ? (
